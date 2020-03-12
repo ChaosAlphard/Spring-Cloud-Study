@@ -6,11 +6,18 @@ spring:
     name: irs-provider-payment8001 # 名称
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource # 数据源类型
-    driver-class-name: com.mysql.jdbc.Driver     # 数据库驱动包
-    url: jdbc:mysql://127.0.0.1:3306/irscloud?useSSL=false&characterEncoding=utf8&useUnicode=true
+    url: jdbc:mysql://127.0.0.1:3306/irscloud?useSSL=false&characterEncoding=utf8&useUnicode=true&serverTimezone=GMT
     username: root
     password: 123456
 
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.ilirus.springcloud.entities # entity别名类所在的package
+
+logging:
+  file:
+    path: ./log
+  level:
+    root: warn
+    com.ilirus.springcloud: info
+    com.ilirus.springcloud.dao: debug

@@ -35,7 +35,8 @@
     <lombok.version>1.16.18</lombok.version>
     <mysql.version>8.0.14</mysql.version>
     <druid.version>1.1.16</druid.version>
-    <mybatis.spring.boot.version>1.3.0</mybatis.spring.boot.version>
+    <mybatis.spring.boot.version>2.1.2</mybatis.spring.boot.version>
+    <jetbrains.annotations.version>13.0</jetbrains.annotations.version>
   </properties>
 
   <!-- 子模块继承后，有以下作用: 锁定版本 + 子modlue 不用写groupId 和version -->
@@ -101,6 +102,13 @@
         <artifactId>lombok</artifactId>
         <version>${lombok.version}</version>
         <optional>true</optional>
+      </dependency>
+      <!-- 编译注释 -->
+      <dependency>
+        <groupId>org.jetbrains</groupId>
+        <artifactId>annotations</artifactId>
+        <version>${jetbrains.annotations.version}</version>
+        <scope>compile</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>

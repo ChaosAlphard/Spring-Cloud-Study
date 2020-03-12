@@ -7,7 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 @SpringBootApplication
 @MapperScan("com.ilirus.springcloud.dao")
 public class PaymentMain8001 {
-    public static void Main(String[] args) {
+    public static void main(String[] args) {
         SpringApplication.run(PaymentMain8001.class);
     }
 }
