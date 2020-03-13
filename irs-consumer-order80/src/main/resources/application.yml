@@ -1,0 +1,10 @@
+server:
+  port: 80 # 端口
+
+logging:
+  file:
+    path: ./log
+  level:
+    root: warn
+    com.ilirus.springcloud: info
+    com.ilirus.springcloud.dao: debug
