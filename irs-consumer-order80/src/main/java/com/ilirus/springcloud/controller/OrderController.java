@@ -18,12 +18,12 @@ public class OrderController {
     private RestTemplate restTemplate;
 
     @GetMapping("/payment/create")
-    public CommonResult create(@RequestBody Payment payment) {
+    public CommonResult create(Payment payment) {
         return restTemplate.postForObject(PAYMENT_URL+"/create", payment, CommonResult.class);
     }
 
     @GetMapping("/payment/query/{id}")
-    public CommonResult<Payment> query(@PathVariable("id") Long id) {
+    public CommonResult query(@PathVariable("id") Long id) {
         return restTemplate.getForObject(PAYMENT_URL+"/query/"+id, CommonResult.class);
     }
 }
