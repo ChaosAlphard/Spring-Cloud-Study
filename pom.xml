@@ -12,6 +12,8 @@
   <modules>
     <module>irs-provider-payment8001</module>
     <module>irs-consumer-order80</module>
+    <module>irs-api-common</module>
+    <module>irs-eureka-server7001</module>
   </modules>
 
   <!-- 统一版本管理 -->
