@@ -5,8 +5,8 @@ eureka:
   instance:
     hostname: localhost # eureka服务端实例名称
   client:
-    register-with-eureka: false # false表示不向服务中心注册自己
-    feth-registry: false # false表示不向服务中心检索
+    register-with-eureka: false # 是否向服务中心注册自己
+    feth-registry: false # 是否向服务中心获取已有的注册信息
     servie-url:
       # 设置Eureka Server 的交互地址。查询服务和注册服务都需要依赖这个地址
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
