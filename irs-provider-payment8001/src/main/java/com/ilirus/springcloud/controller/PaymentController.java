@@ -5,6 +5,7 @@ import com.ilirus.springcloud.entities.Payment;
 import com.ilirus.springcloud.enums.Status;
 import com.ilirus.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -15,6 +16,9 @@ import javax.annotation.Resource;
 public class PaymentController {
     @Resource
     private PaymentService paymentService;
+
+    @Value("${server.port}")
+    private String port;
 
     @PostMapping("/create")
     public CommonResult create(@RequestBody Payment payment) {
@@ -31,6 +35,6 @@ public class PaymentController {
     @GetMapping("/query/{id}")
     public CommonResult queryByID(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentByID(id);
-        return CommonResult.ofData(Status.SUCCESS, payment);
+        return CommonResult.ofCustom(Status.SUCCESS, "[端口"+port+"]成功", payment);
     }
 }
