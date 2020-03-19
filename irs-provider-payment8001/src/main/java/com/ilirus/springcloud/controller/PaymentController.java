@@ -31,10 +31,6 @@ public class PaymentController {
     @GetMapping("/query/{id}")
     public CommonResult queryByID(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentByID(id);
-        if(payment != null) {
-            return CommonResult.OfData(Status.SUCCESS, payment);
-        } else {
-            return CommonResult.Of(Status.NO_DATA_FOUND);
-        }
+        return CommonResult.OfData(Status.SUCCESS, payment);
     }
 }
