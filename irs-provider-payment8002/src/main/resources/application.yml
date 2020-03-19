@@ -1,0 +1,32 @@
+server:
+  port: 8002 # 端口
+
+spring:
+  application:
+    name: irs-provider-payment # 名称
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource # 数据源类型
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/irscloud?useSSL=false&characterEncoding=utf8&useUnicode=true&serverTimezone=GMT
+    username: root
+    password: 123456
+
+eureka:
+  client:
+    register-with-eureka: true
+    fetch-registry: true
+    service-url:
+      # 服务中心链接
+      defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.ilirus.springcloud.entities # entity别名类所在的package
+
+logging:
+  file:
+    path: ./log
+  level:
+    root: warn
+    com.ilirus.springcloud: info
+    com.ilirus.springcloud.dao: debug
