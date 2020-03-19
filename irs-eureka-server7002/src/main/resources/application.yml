@@ -1,10 +1,6 @@
 server:
   port: 7002
 
-spring:
-  application:
-    name: eureka7002
-
 eureka:
   instance:
     hostname: eureka7002.com # eureka服务端实例名称
