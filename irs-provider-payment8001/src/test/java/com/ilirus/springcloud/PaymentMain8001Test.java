@@ -12,7 +12,6 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.sql.SQLException;
-import java.time.Duration;
 
 @SpringBootTest
 class PaymentMain8001Test {
@@ -44,12 +43,5 @@ class PaymentMain8001Test {
         int res = paymentService.createPayment(payment);
         System.out.println(res);
         Assertions.assertNotEquals(res, 0);
-
-        Assertions.assertThrows(SQLException.class, () -> {
-            /* ... */
-        });
-        Assertions.assertTimeout(Duration.ofSeconds(3), () -> {
-            System.out.println("超时");
-        });
     }
 }
