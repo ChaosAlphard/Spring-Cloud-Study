@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: irs-provider-payment8001 # 名称
+    name: irs-provider-payment # 名称
   datasource:
     type: com.alibaba.druid.pool.DruidDataSource # 数据源类型
     driver-class-name: com.mysql.cj.jdbc.Driver

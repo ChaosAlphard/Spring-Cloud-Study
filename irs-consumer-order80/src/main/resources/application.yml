@@ -3,7 +3,7 @@ server:
 
 spring:
   application:
-    name: irs-consumer-order80 # 名称
+    name: irs-consumer-order # 名称
 
 eureka: # eureka 客户端
   client:
