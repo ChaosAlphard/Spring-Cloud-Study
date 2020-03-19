@@ -22,15 +22,15 @@ public class PaymentController {
         log.info("插入结果: "+res);
 
         if(res > 0) {
-            return CommonResult.Of(Status.SUCCESS);
+            return CommonResult.of(Status.SUCCESS);
         } else {
-            return CommonResult.Of(Status.FAIL);
+            return CommonResult.of(Status.FAIL);
         }
     }
 
     @GetMapping("/query/{id}")
     public CommonResult queryByID(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPaymentByID(id);
-        return CommonResult.OfData(Status.SUCCESS, payment);
+        return CommonResult.ofData(Status.SUCCESS, payment);
     }
 }

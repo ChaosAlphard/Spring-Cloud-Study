@@ -17,6 +17,6 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.OK)
     public CommonResult notFound(NoThatEntityException ntee) {
         log.error("在数据库中找不到对应的实体", ntee);
-        return CommonResult.Of(Status.NO_DATA_FOUND);
+        return CommonResult.of(Status.NO_DATA_FOUND);
     }
 }

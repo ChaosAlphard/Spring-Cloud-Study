@@ -18,13 +18,19 @@ public class CommonResult<T> {
 
     @NotNull
     @Contract("_ -> new")
-    public static<T> CommonResult<T> Of(@NotNull Status status) {
+    public static<T> CommonResult<T> of(@NotNull Status status) {
         return new CommonResult<T>(status.getCode(), status.getMessage(), null);
     }
 
     @NotNull
     @Contract("_, _ -> new")
-    public static<T> CommonResult<T> OfData(@NotNull Status status, T data) {
+    public static<T> CommonResult<T> ofData(@NotNull Status status, T data) {
         return new CommonResult<T>(status.getCode(), status.getMessage(), data);
+    }
+
+    @NotNull
+    @Contract("_, _, _ -> new")
+    public static<T> CommonResult<T> ofCustom(@NotNull Status status, @NotNull String message, T data) {
+        return new CommonResult<>(status.getCode(), message, data);
     }
 }
