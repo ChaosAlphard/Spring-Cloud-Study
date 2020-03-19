@@ -10,9 +10,9 @@
   <packaging>pom</packaging>
 
   <modules>
+    <module>irs-api-common</module>
     <module>irs-provider-payment8001</module>
     <module>irs-consumer-order80</module>
-    <module>irs-api-common</module>
     <module>irs-eureka-server7001</module>
     <module>irs-eureka-server7002</module>
   </modules>
