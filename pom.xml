@@ -18,7 +18,7 @@
     <module>irs-provider-payment8002</module>
   </modules>
 
-  <!-- 统一版本管理 -->
+  <!-- 统一版本号管理 -->
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <maven.compiler.source>1.8</maven.compiler.source>
@@ -32,7 +32,19 @@
     <jetbrains.annotations.version>13.0</jetbrains.annotations.version>
   </properties>
 
-  <!-- 子模块继承后，有以下作用: 锁定版本 + 子modlue 不用写groupId 和version -->
+  <!-- 子项目共有依赖, 子项目不需要再声明, 会自动引入 -->
+  <dependencies>
+    <!-- 编译注释 -->
+    <dependency>
+      <groupId>org.jetbrains</groupId>
+      <artifactId>annotations</artifactId>
+      <version>${jetbrains.annotations.version}</version>
+      <scope>compile</scope>
+    </dependency>
+  </dependencies>
+
+  <!-- 子项目统一依赖版本管理，子项目若不声明则不会自动引入 -->
+  <!-- 子项目可只声明groupId 和artifactId, 版本会从这里继承 -->
   <dependencyManagement>
     <dependencies>
       <!-- springboot 2.2.2 -->
@@ -95,13 +107,6 @@
         <artifactId>lombok</artifactId>
         <version>${lombok.version}</version>
         <optional>true</optional>
-      </dependency>
-      <!-- 编译注释 -->
-      <dependency>
-        <groupId>org.jetbrains</groupId>
-        <artifactId>annotations</artifactId>
-        <version>${jetbrains.annotations.version}</version>
-        <scope>compile</scope>
       </dependency>
     </dependencies>
   </dependencyManagement>
