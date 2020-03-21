@@ -10,3 +10,11 @@ eureka:
     service-url:
       # 设置Eureka Server 的交互地址。查询服务和注册服务都需要依赖这个地址
       defaultZone: http://eureka7001.com:7001/eureka/
+
+logging:
+  file:
+    path: ./log
+  level:
+    root: warn
+    com.ilirus.springcloud: info
+    com.ilirus.springcloud.dao: debug

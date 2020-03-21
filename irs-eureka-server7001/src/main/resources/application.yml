@@ -15,3 +15,11 @@ eureka:
     enable-self-preservation: false
     # 移除服务的超时时间
     eviction-interval-timer-in-ms: 5000
+
+logging:
+  file:
+    path: ./log
+  level:
+    root: warn
+    com.ilirus.springcloud: info
+    com.ilirus.springcloud.dao: debug
