@@ -4,8 +4,9 @@ import org.jetbrains.annotations.Contract;
 
 public enum Status {
     SUCCESS(200,"成功"),
-    FAIL(400,"失败"),
-    NO_DATA_FOUND(404,"找不到对应的数据")
+    FAIL(500,"失败"),
+    NO_DATA_FOUND(404,"找不到对应的数据"),
+    UNEXPECTED_ERROR(500, "意外的错误")
     ;
 
     private Integer code;

@@ -19,4 +19,11 @@ public class GlobalExceptionHandler {
         log.error("在数据库中找不到对应的实体", ntee);
         return CommonResult.of(Status.NO_DATA_FOUND);
     }
+
+    @ExceptionHandler({Exception.class})
+    @ResponseStatus(HttpStatus.OK)
+    public CommonResult uncatchedError(Exception e) {
+        log.error("意外的错误", e);
+        return CommonResult.of(Status.UNEXPECTED_ERROR);
+    }
 }
