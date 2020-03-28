@@ -17,7 +17,6 @@
     <module>irs-eureka-server7002</module>
     <module>irs-provider-payment8002</module>
     <module>irs-consumer-openfeign80</module>
-    <module>irs-provider-openfeign8003</module>
   </modules>
 
   <!-- 统一版本号管理 -->
