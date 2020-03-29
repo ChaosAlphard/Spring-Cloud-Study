@@ -11,7 +11,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 @Configuration
-public class ApplicationontextConfig {
+public class ApplicationContextConfig {
 
     @Bean
     @LoadBalanced  // 授予restTemplate负载均衡能力

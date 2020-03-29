@@ -26,3 +26,4 @@ logging:
     root: warn
     com.ilirus.springcloud: info
     com.ilirus.springcloud.dao: debug
+    com.ilirus.springcloud.service.PaymentFeignService: debug
