@@ -21,4 +21,10 @@ public class OrderController {
     public CommonResult query(@PathVariable("id") Long id) {
         return paymentFeignService.getPaymentByID(id);
     }
+
+    @GetMapping("/payment/timeout")
+    public CommonResult timeout() {
+        log.info("超时");
+        return paymentFeignService.timeout();
+    }
 }

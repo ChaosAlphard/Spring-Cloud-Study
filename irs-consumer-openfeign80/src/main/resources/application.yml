@@ -12,6 +12,13 @@ eureka: # eureka 客户端
     service-url:
       defaultZone: http://eureka7001.com:7001/eureka,http://eureka7002.com:7002/eureka
 
+# 设置超时时间
+ribbon:
+  # 指与服务器建立链接的超时时间(单位: ms)
+  ConnectTimeout: 1000
+  # 指与服务器建立链接之后，从服务器读取到可用资源所花时间
+  ReadTimeout: 5000
+
 logging:
   file:
     path: ./log

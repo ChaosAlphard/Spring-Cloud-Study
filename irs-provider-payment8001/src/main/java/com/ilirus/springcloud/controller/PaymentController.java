@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import java.util.List;
+import java.util.concurrent.TimeUnit;
 
 @RestController
 @RequestMapping("/payment")
@@ -54,5 +55,11 @@ public class PaymentController {
     public CommonResult discovery(@PathVariable String instances) {
         List<ServiceInstance> serviceInstances = discoveryClient.getInstances(instances);
         return CommonResult.ofData(Status.SUCCESS, serviceInstances);
+    }
+
+    @GetMapping("/timeout")
+    public CommonResult timeout() throws InterruptedException {
+        TimeUnit.SECONDS.sleep(3L);
+        return CommonResult.ofCustom(Status.FAIL, "超时", port);
     }
 }
